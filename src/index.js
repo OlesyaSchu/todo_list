@@ -15,11 +15,8 @@ class List extends React.Component {
 
 	renderTask(){
 		let newTaskList = this.state.tasks;
-		//console.log(newTaskList);
-		let newTask = [<Task keyTask={this.state.keyTask} />];
-		Array.prototype.push.apply(newTaskList, newTask);
+		newTaskList.push(<Task keyTask={this.state.keyTask} text={this.state.textTask} />);
 		let newKeyTask = this.state.keyTask;
-		//console.log(newKeyTask);
 		newKeyTask++;
 		this.setState({
 			tasks: newTaskList,
